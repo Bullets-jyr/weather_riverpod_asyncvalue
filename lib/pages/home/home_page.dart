@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:weather_riverpod_asyncvalue/repositories/providers/weather_repository_provider.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -9,6 +10,12 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
+
+  @override
+  void initState() {
+    super.initState();
+    ref.read(weatherRepositoryProvider).fetchWeather('london');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

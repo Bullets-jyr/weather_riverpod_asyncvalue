@@ -4,6 +4,7 @@ import 'current_weather.dart';
 
 part 'app_weather.freezed.dart';
 
+// Convenient Class
 @freezed
 class AppWeather with _$AppWeather {
   const factory AppWeather({

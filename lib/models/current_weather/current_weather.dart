@@ -6,6 +6,7 @@ part 'current_weather.g.dart';
 
 @freezed
 class CurrentWeather with _$CurrentWeather {
+  // Nested Object에 대해서도 명시적으로 toJson이 호출되도록...
   @JsonSerializable(explicitToJson: true)
   const factory CurrentWeather({
     required List<Weather> weather,
