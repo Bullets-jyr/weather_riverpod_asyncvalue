@@ -6,6 +6,7 @@ import 'package:weather_riverpod_asyncvalue/repositories/providers/weather_repos
 
 import '../../models/current_weather/current_weather.dart';
 import '../../models/custom_error/custom_error.dart';
+import '../../widgets/error_dialog.dart';
 import '../search/search_page.dart';
 import 'widgets/show_weather.dart';
 
@@ -35,14 +36,15 @@ class _HomePageState extends ConsumerState<HomePage> {
         // Only Error
         next.whenOrNull(
           error: (error, stackTrace) {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Text((error as CustomError).errMsg),
-                );
-              },
-            );
+            errorDialog(context, (error as CustomError).errMsg);
+            // showDialog(
+            //   context: context,
+            //   builder: (context) {
+            //     return AlertDialog(
+            //       content: Text((error as CustomError).errMsg),
+            //     );
+            //   },
+            // );
           },
         );
       },
