@@ -148,6 +148,7 @@ class ShowWeather extends ConsumerWidget {
         );
       },
       loading: () {
+        print('***** in loading callback');
         return const Center(
           child: CircularProgressIndicator(),
         );

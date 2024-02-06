@@ -8,6 +8,7 @@ import '../../models/current_weather/current_weather.dart';
 import '../../models/custom_error/custom_error.dart';
 import '../../widgets/error_dialog.dart';
 import '../search/search_page.dart';
+import '../temp_settings/temp_settings_page.dart';
 import 'widgets/show_weather.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -70,6 +71,16 @@ class _HomePageState extends ConsumerState<HomePage> {
               }
             },
             icon: const Icon(Icons.search),
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const TempSettingsPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
