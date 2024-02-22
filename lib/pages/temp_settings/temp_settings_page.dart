@@ -18,6 +18,7 @@ class TempSettingsPage extends StatelessWidget {
         child: ListTile(
           title: const Text('Temperature Unit'),
           subtitle: const Text('Celsius/Fahrenheit (Default: Celsius)'),
+          // Provider를 Switch 위젯에만 적용합니다.
           trailing: Consumer(
             builder: (context, ref, child) {
               final tempUnit = ref.watch(tempSettingsProvider);

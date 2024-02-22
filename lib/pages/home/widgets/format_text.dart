@@ -3,6 +3,7 @@ import 'package:recase/recase.dart';
 
 class FormatText extends StatelessWidget {
   final String description;
+
   const FormatText({
     Key? key,
     required this.description,

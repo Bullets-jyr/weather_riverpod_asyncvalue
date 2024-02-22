@@ -9,6 +9,9 @@ part 'weather_provider.g.dart';
 class Weather extends _$Weather {
   @override
   FutureOr<CurrentWeather?> build() {
+    // 값이 존재하지 않은 상태는 null로 다루면 됩니다.
+    // null: AsyncData(null)
+    // Future<CurrentWeather?>.value(null): AsyncLoading() > AsyncData(null)
     return Future<CurrentWeather?>.value(null);
   }
 

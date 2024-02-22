@@ -8,6 +8,7 @@ import 'dio_error_handler.dart';
 
 class WeatherApiServices {
   final Dio dio;
+
   WeatherApiServices({
     required this.dio,
   });
@@ -35,6 +36,7 @@ class WeatherApiServices {
 
       return directGeocoding;
     } catch (e) {
+      // 호출한 측에 그 에러를 다시 던집니다.
       rethrow;
     }
   }

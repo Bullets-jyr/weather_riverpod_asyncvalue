@@ -39,6 +39,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       weatherProvider,
           (previous, next) {
         // Only Error
+        // 예외) ref.invalidate, ref.refresh
         next.whenOrNull(
           data: (CurrentWeather? currentWeather) {
             if (currentWeather == null) {

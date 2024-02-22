@@ -8,6 +8,7 @@ class ShowTemperature extends ConsumerWidget {
   final double temperature;
   final double fontSize;
   final FontWeight fontWeight;
+
   const ShowTemperature({
     Key? key,
     required this.temperature,

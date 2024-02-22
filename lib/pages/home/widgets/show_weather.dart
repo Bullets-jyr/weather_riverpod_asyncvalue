@@ -11,6 +11,7 @@ import 'show_temperature.dart';
 
 class ShowWeather extends ConsumerWidget {
   final AsyncValue<CurrentWeather?> weatherState;
+
   const ShowWeather({
     super.key,
     required this.weatherState,
@@ -132,6 +133,8 @@ class ShowWeather extends ConsumerWidget {
       },
       error: (error, stackTrace) {
         print('***** in error callback');
+        // value: previous value가 있을 경우, loading, error state에서 previous value를 return 합니다.
+        // previous value가 없는 상태에서는 loading state에서 null을 return하고 error state에서는 error를 rethrow 합니다.
         if (weatherState.value == null) {
           return const SelectCity();
         }

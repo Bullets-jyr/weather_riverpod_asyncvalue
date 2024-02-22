@@ -12,6 +12,7 @@ class CurrentWeather with _$CurrentWeather {
     required List<Weather> weather,
     required Main main,
     required Sys sys,
+    // DirectGeocoding의 name을 이용합니다.
     required String name,
   }) = _CurrentWeather;
 
@@ -45,6 +46,7 @@ class Main with _$Main {
 @freezed
 class Sys with _$Sys {
   const factory Sys({
+    // DirectGeocoding의 country를 이용합니다.
     @Default('') String country,
   }) = _Sys;
 

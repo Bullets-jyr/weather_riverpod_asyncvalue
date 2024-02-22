@@ -22,7 +22,8 @@ CurrentWeather _$CurrentWeatherFromJson(Map<String, dynamic> json) {
 mixin _$CurrentWeather {
   List<Weather> get weather => throw _privateConstructorUsedError;
   Main get main => throw _privateConstructorUsedError;
-  Sys get sys => throw _privateConstructorUsedError;
+  Sys get sys =>
+      throw _privateConstructorUsedError; // DirectGeocoding의 name을 이용합니다.
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -179,6 +180,7 @@ class _$CurrentWeatherImpl
   final Main main;
   @override
   final Sys sys;
+// DirectGeocoding의 name을 이용합니다.
   @override
   final String name;
 
@@ -245,7 +247,7 @@ abstract class _CurrentWeather implements CurrentWeather {
   Main get main;
   @override
   Sys get sys;
-  @override
+  @override // DirectGeocoding의 name을 이용합니다.
   String get name;
   @override
   @JsonKey(ignore: true)
@@ -632,6 +634,7 @@ Sys _$SysFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Sys {
+// DirectGeocoding의 country를 이용합니다.
   String get country => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -707,6 +710,7 @@ class _$SysImpl with DiagnosticableTreeMixin implements _Sys {
   factory _$SysImpl.fromJson(Map<String, dynamic> json) =>
       _$$SysImplFromJson(json);
 
+// DirectGeocoding의 country를 이용합니다.
   @override
   @JsonKey()
   final String country;
@@ -755,7 +759,7 @@ abstract class _Sys implements Sys {
 
   factory _Sys.fromJson(Map<String, dynamic> json) = _$SysImpl.fromJson;
 
-  @override
+  @override // DirectGeocoding의 country를 이용합니다.
   String get country;
   @override
   @JsonKey(ignore: true)
